@@ -1,0 +1,41 @@
+== PHP Sprockets
+
+I've just started my new job here at {First Flight}[http://www.firstflight.se] and one of my first assignments were
+to take over development of a PHP based application. I really missed the feature of the Rails asset pipeline,
+so I made a simple rack based app to emulate the behaviour and enable the use of sass, sort of.
+
+I also added a rake task to compress/minify the css and the js files into single ones when you're ready to deploy to your production
+environment.
+
+== Instructions
+
+1.  Clone the repo and run bundler to install the dependencies
+      git clone git@github.com:mattiasottosson/php-sprockets.git
+      bundle
+
+2.  Start the rack application
+      bundle exec rackup
+
+3.  Access your app locally and use the js/css manifests file as usual.
+    The rack app simply lists the contents of the manifests files in your layout file, when accessing it from localhost:
+      <?php if($_SERVER['SERVER_NAME'] == '127.0.0.1') { ?>
+        <link href="http://127.0.0.1:9292/assets/application-manifest.css" rel="stylesheet" type="text/css" />
+      <?php  } else { ?>
+        <link href="assets/compressed/application.min.css" rel="stylesheet" type="text/css" />
+      <?php }  ?>
+
+      <?php if($_SERVER['SERVER_NAME'] == '127.0.0.1') {
+        echo file_get_contents('http://127.0.0.1:9292/javascripts');
+      } else { ?>
+        <script src="assets/compressed/application.min.js"></script>
+      <?php }?>
+
+    Output:
+
+      <link href="http://127.0.0.1:9292/assets/application-manifest.css" rel="stylesheet" type="text/css" />
+
+      <script src="//127.0.0.1:9292/assets/jquery.js" type="text/javascript"></script>
+      <script src="//127.0.0.1:9292/assets/application.js" type="text/javascript"></script>
+
+4.  Compress your assets by using the built in rake task. They get written to assets/compressed
+      rake assets:compress
