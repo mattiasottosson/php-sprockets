@@ -1,0 +1,25 @@
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass";
+
+$white: #fff;
+
+body {
+  background: $white url("/assets/images/background.png");
+  text-align: center;
+  font-family: sans-serif; }
+
+h1 {
+  color: rgba(0, 0, 0, .3);
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  padding: 100px 0 10px;
+  margin: 0; }
+
+#main {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto; }
+

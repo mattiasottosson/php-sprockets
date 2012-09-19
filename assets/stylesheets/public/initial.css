@@ -1,0 +1,93 @@
+/*! Initial Stylesheet v1.0.5 - https://github.com/niclasgelin/initial-css */
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, a, b, i, q,
+blockquote, em, strong, small, del, ins,
+sub, sup, abbr, acronym, cite, address, dfn,
+pre, code, kbd, samp, var, img, object, iframe,
+form, fieldset, legend, label, /* input, textarea, select, button */
+ol, ul, li, dl, dt, dd,
+table, thead, tbody, tfoot, tr, th, td, caption,
+header, hgroup, footer, article, section, aside, nav,
+figure, figcaption, embed, audio, video, canvas,
+details, summary, time, mark {
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1.5;
+}
+b, strong {
+  font-weight: bold;
+}
+i, em, dfn {
+  font-style: italic;
+}
+q {
+  quotes: none;
+}
+q:before, q:after {
+  content: '';
+  content: none;
+}
+small, sub, sup {
+  font-size: 75%;
+}
+sub, sup {
+  line-height: 0;
+  position: relative;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+input, textarea, select, button {
+  font-size: 100%;
+  font-family: sans-serif;
+  line-height: normal;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+input[type="button"], input[type="reset"], input[type="submit"], button {
+  cursor: pointer;
+  *overflow: visible;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+ol, ul {
+  list-style: none;
+  list-style-image: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+header, hgroup, footer, article, section, aside, nav,
+figure, figcaption, embed, audio, video, canvas {
+  display: block;
+  *zoom: 1;
+}
+figure, audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+}
+mark {
+  background: yellow;
+  color: black;
+}
