@@ -21,7 +21,7 @@ class Compressor
 
     puts "** Generating compressed js... "
     File.open("#{asset_path}/compressed/application.min.js", 'w') do |f|
-       f.write(Uglifier.compile(sprockets.find_asset('application-manifest.js').to_s))
+       f.write(sprockets.find_asset('application-manifest.js').to_s)
     end
 
     puts "** Generating compressed css... "
